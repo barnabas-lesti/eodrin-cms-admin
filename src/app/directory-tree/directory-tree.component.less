@@ -1,0 +1,25 @@
+.directory-tree {
+	position: relative;
+
+	.item {
+		&__icon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translateY(2px);
+		}
+
+		&__label {
+			display: inline-block;
+			margin-left: 20px;
+		}
+
+
+
+		&:hover {
+			::ng-deep svg {
+				fill: yellow;
+			}
+		}
+	}
+}

@@ -13,6 +13,8 @@ import { Icons } from './Icons';
 /**
  * App icon component.
  * Uses: https://github.com/feathericons/feather.
+ *
+ * @author Barnabas Lesti
  */
 export class IconComponent implements OnInit {
 	private iconSvg: SafeHtml;
@@ -22,7 +24,12 @@ export class IconComponent implements OnInit {
 	constructor (private domSanitizer: DomSanitizer) {}
 
 	ngOnInit() {
+		const svgOptions = {
+			width: 16,
+			height: 16,
+			class: 'app-icon',
+		};
 		const featherIcon = feather.icons[this.icon];
-		this.iconSvg = this.domSanitizer.bypassSecurityTrustHtml(featherIcon ? featherIcon.toSvg() : '');
+		this.iconSvg = this.domSanitizer.bypassSecurityTrustHtml(featherIcon ? featherIcon.toSvg(svgOptions) : '');
 	}
 }

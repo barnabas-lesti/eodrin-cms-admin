@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 
 import { IconComponent } from './common/icon/icon.component';
 
+// TODO: Modularize
+import { DirectoryTreeComponent } from './directory-tree/directory-tree.component';
+
 @NgModule({
 	declarations: [
 		AppComponent,
 		IconComponent,
+
+		DirectoryTreeComponent,
 	],
 	imports: [
 		BrowserModule,
